@@ -39,13 +39,13 @@ for _ in range(0, 10):
     cdi = float(dado) + (random() - 0.5)
 
   # Verificando se o arquivo "taxa-cdi.csv" existe, se false ele cria o arquivo
-if os.path.exists('./taxa-cdi.csv') == False:
-    with open(file='./taxa-cdi.csv', mode='w', encoding='utf8') as fp:
-        fp.write('data,hora,taxa\n')
-    # Salvando dados no arquivo "taxa-cdi.csv"
-with open(file='./taxa-cdi.csv', mode='a', encoding='utf8') as fp:
-    fp.write(f'{data},{hora},{cdi}\n')
-    time.sleep(1)
+    if os.path.exists('./taxa-cdi.csv') == False:
+        with open(file='./taxa-cdi.csv', mode='w', encoding='utf8') as fp:
+            fp.write('data,hora,taxa\n')
+        # Salvando dados no arquivo "taxa-cdi.csv"
+    with open(file='./taxa-cdi.csv', mode='a', encoding='utf8') as fp:
+        fp.write(f'{data},{hora},{cdi}\n')
+        time.sleep(1)
 print("Sucesso")
 
 
